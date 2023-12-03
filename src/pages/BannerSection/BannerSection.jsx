@@ -35,7 +35,14 @@ const BannerSection = () => {
             </div>
           </div>
         </div>
+        <div className='relative lg:w-1/2 '>
+          <div >
+            <img className='w-full  h-full  sm:h-96'  src="https://i.ibb.co/LJdm6qn/photo-1559339352-11d035aa65de-blend-000000-blend-alpha-10-blend-mode-normal-blend-w-1-crop-faces-edg.jpg" alt="" />
+          </div>
         </div>
+        </div>
+
+       
 
         </div>
     );
