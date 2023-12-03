@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AboutUs = () => {
     return (
@@ -36,7 +37,17 @@ const AboutUs = () => {
   </div> */}
 </div>
 
-   
+<h2 className='text-center text-3xl mt-5 mb-8'>Welcome To Our Family</h2>
+<div className="card lg:card-side bg-base-100 shadow-xl mb-4">
+  <figure><img src="https://i.ibb.co/XJsQKvZ/photo-1658891547508-e9ac5275a5c2-blend-000000-blend-alpha-10-blend-mode-normal-blend-w-1-crop-faces.jpg" alt="Album"/></figure>
+  <div className="card-body">
+    <h2 className="card-title">Dear Customers,</h2>
+    <p>"Ladies and gentlemen, a warm welcome to [Restaurant Name]! We're thrilled to have you join us. Our team is here to make your dining experience exceptional. If you have any preferences or questions, feel free to ask. Thank you for choosing us – we hope you enjoy your meal!"</p>
+    <div className="card-actions justify-end">
+     <Link to='/' className='btn btn-primary'  > <button>Back To Home</button>  </Link>
+    </div>
+  </div>
+</div>
             
         </div>
     );
