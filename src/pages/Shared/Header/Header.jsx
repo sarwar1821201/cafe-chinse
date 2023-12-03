@@ -38,7 +38,7 @@ return (
       </li>
       <li>
         <NavLink
-          to='/about-us'
+          to='/about'
           className={({ isActive }) => (isActive ? 'active' : 'default')}
         >
           About us
