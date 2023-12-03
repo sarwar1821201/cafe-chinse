@@ -30,7 +30,7 @@ return (
       </li>
       <li>
         <NavLink
-          to='/books'
+          to='/blog'
           className={({ isActive }) => (isActive ? 'active' : 'default')}
         >
           Blog
@@ -38,7 +38,7 @@ return (
       </li>
       <li>
         <NavLink
-          to='/about'
+          to='/about-us'
           className={({ isActive }) => (isActive ? 'active' : 'default')}
         >
           About us
@@ -47,12 +47,14 @@ return (
     </ul>
 
    {/* Mobile Navbar Section */}
-
+      <button className="btn bg-yellow-700" >Login</button>  
    
 
 {/* Mobile Section End */}
 
     </div>
+
+    
 
     </div>
     
