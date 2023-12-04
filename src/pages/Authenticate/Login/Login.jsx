@@ -1,5 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FcGoogle } from "react-icons/fc";
+import { FaGithubSquare } from "react-icons/fa";
+
+
 
 const Login = () => {
 
@@ -42,8 +46,13 @@ const Login = () => {
 
       {/* link register */}
       <Link to='/register' >
-      <button className="btn btn-link">New To This Site? Please Register  </button>
+      <button className="btn btn-link m-2">New To This Site? Please Register  </button>
       </Link>
+
+   {/* //sign in with FcGoogle */}
+   <button className="btn btn-link m-2 mb-2">  <FcGoogle></FcGoogle> Sign in With Google  </button>
+   <button className="btn btn-link m-2 mb-2">  <FaGithubSquare></FaGithubSquare> Sign in With Git-Hub </button>
+
 
     </div>
   </div>
