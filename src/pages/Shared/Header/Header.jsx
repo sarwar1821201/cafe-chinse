@@ -1,11 +1,13 @@
 
 import { Link, NavLink } from 'react-router-dom';
 import {BoltIcon, Bars3BottomLeftIcon, XMarkIcon,  } from '@heroicons/react/24/solid'
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { AuthContext } from '../../../providers/AuthProvider';
 
 const Header = () => {
    
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const {user} =useContext(AuthContext)
 
 return (
     <div className='bg-gray-100 px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8'>
@@ -48,7 +50,9 @@ return (
     </ul>
 
    {/* Mobile Navbar Section */}
-     <Link to='/login' > <button className="btn bg-yellow-700" >Login</button> </Link>  
+  {
+      user ? <> {user.displayName} </> :  <Link to='/login' > <button className="btn bg-yellow-700" >Login</button> </Link>  
+  }
       
 
       <div className='lg:hidden'>

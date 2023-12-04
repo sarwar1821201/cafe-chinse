@@ -9,8 +9,8 @@ const githubProvider= new GithubAuthProvider();
 
 const AuthProvider = ({children}) => {
 
-    const [user, setUser] =useState(null)
-
+    // const [user, setUser] =useState(null)
+       const user= {displayName: 'bdgsh'}
       const signInWithGoogle= () =>{
         return signInWithPopup(auth,googleProvider)
       }
