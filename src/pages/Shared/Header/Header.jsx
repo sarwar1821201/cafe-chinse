@@ -48,7 +48,7 @@ return (
     </ul>
 
    {/* Mobile Navbar Section */}
-      <button className="btn bg-yellow-700" >Login</button>  
+     <Link to='/login' > <button className="btn bg-yellow-700" >Login</button> </Link>  
       
 
       <div className='lg:hidden'>

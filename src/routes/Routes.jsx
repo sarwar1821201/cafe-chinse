@@ -5,6 +5,8 @@ import Blog from "../pages/Blog/Blog";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import AboutUs from "../pages/AboutUs/AboutUs";
 import RecipeLayout from "../layouts/RecipeLayout";
+import Login from "../pages/Authenticate/Login/Login";
+import Register from "../pages/Authenticate/Register/Register";
 
 
 
@@ -25,6 +27,14 @@ const router= createBrowserRouter([
             {
                 path:'/about',
                 element:<AboutUs></AboutUs>
+            },
+            {
+                path:'/login',
+                element: <Login></Login>
+            },
+            {
+                path: '/register',
+                element: <Register></Register>
             }
         ]
     },

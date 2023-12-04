@@ -2,7 +2,7 @@ import React from 'react';
 import { AiOutlineLike } from "react-icons/ai";
 
 const SingleRecipe = ({recipe}) => {
-    console.log(recipe)
+   // console.log(recipe)
     const {recipe_name,recipe_id,cooking_method,ingredients,rating} = recipe
     return (
         <div >
