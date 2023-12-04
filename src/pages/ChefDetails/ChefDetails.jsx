@@ -1,11 +1,14 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AiOutlineLike } from "react-icons/ai";
+import SingleRecipe from '../SingleRecipe/SingleRecipe';
 
 const ChefDetails = () => {
  
     const chefDetails= useLoaderData();
-  const {  chef_picture,chef_id,chef_name,years_of_experience,likes,number_of_recipes,bio} = chefDetails
+   // console.log(chefDetails)
+      
+  const {  chef_picture,chef_id,chef_name,years_of_experience,likes,number_of_recipes,bio, recipes} = chefDetails
 
     return (
         <div>
@@ -26,6 +29,26 @@ const ChefDetails = () => {
   </div>
     </div>
        </div>
+
+   {/* recipe info and cooking method */}
+
+   <div className='bg-neutral-600 p-12' >
+
+<h3 className='text-3xl text-center mt-4 mb-5 text-emerald-400' >Here the Best Recipe of our Chef </h3>
+     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+        
+       {
+          recipes.map( recipe =>  <SingleRecipe  
+            key={recipe.recipe_id}
+            recipe={recipe}
+          >
+
+          </SingleRecipe>  )
+       }
+
+     </div>
+ </div>
+
 
         </div>
     );
