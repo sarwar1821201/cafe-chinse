@@ -1,9 +1,10 @@
 import React from 'react';
 import { AiOutlineLike } from "react-icons/ai";
+import { Link } from 'react-router-dom';
 
 
 const SingleChefData = ({chef}) => {
-    console.log(chef)
+//console.log(chef)
     const {chef_picture,chef_id,chef_name,years_of_experience,likes,number_of_recipes} =chef
     return (
         <div>
@@ -17,7 +18,7 @@ const SingleChefData = ({chef}) => {
     <p>Total Recipe: {number_of_recipes} </p>
     <p>likes: <span className='inline-flex text-red-700'><AiOutlineLike></AiOutlineLike></span>  {likes} </p>
     <div className="card-actions">
-      <button className="btn btn-primary">View Recipes</button>
+     <Link to= {`chefInfo/${chef_id}`} > <button className="btn btn-primary">View Recipes</button></Link>
     </div>
   </div>
 </div>
