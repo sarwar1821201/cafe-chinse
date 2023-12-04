@@ -1,4 +1,6 @@
 import React from 'react';
+import { AiOutlineLike } from "react-icons/ai";
+
 
 const SingleChefData = ({chef}) => {
     console.log(chef)
@@ -13,9 +15,9 @@ const SingleChefData = ({chef}) => {
     <h2 className="card-title">{chef_name}</h2>
     <p>experience: {years_of_experience} years</p>
     <p>Total Recipe: {number_of_recipes} </p>
-    <p>likes: {likes} </p>
+    <p>likes: <span className='inline-flex text-red-700'><AiOutlineLike></AiOutlineLike></span>  {likes} </p>
     <div className="card-actions">
-      <button className="btn btn-primary">Buy Now</button>
+      <button className="btn btn-primary">View Recipes</button>
     </div>
   </div>
 </div>
