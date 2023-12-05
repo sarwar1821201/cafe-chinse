@@ -39,7 +39,18 @@ const Login = () => {
           })
        }
 
+      const handleGoogleSignIn = () => {
+         console.log('google diye login koro')
+         signInWithGoogle()
+         .then( (result) => {
+           const user= result.user;
+           console.log(user)
 
+         } )
+         .catch( (error) => {
+          console.log('error' ,  error.message)
+         } );
+      }
 
     return (
         <div>
@@ -90,7 +101,7 @@ const Login = () => {
       </Link>
 
    {/* //sign in with FcGoogle */}
-   <button className="btn btn-link m-2 mb-2">  <FcGoogle></FcGoogle> Sign in With Google  </button>
+   <button onClick={handleGoogleSignIn} className="btn btn-link m-2 mb-2">  <FcGoogle></FcGoogle> Sign in With Google  </button>
    <button className="btn btn-link m-2 mb-2">  <FaGithubSquare></FaGithubSquare> Sign in With Git-Hub </button>
 
 
