@@ -8,7 +8,7 @@ import { AuthContext } from '../../../providers/AuthProvider';
 
 const Login = () => {
     
- // const [error, setError] =useState('')
+ const [error, setError] =useState('')
    const [show, setShow] = useState(false);
    const [success, setSuccess] = useState('')
     const {signIn, signInWithGoogle, signInWithGithub } =  useContext(AuthContext);
@@ -25,6 +25,7 @@ const Login = () => {
 
           console.log(email,password)
            setSuccess('')
+           setError('')
 
           signIn(email,password)
           .then( (result) =>{
@@ -32,6 +33,7 @@ const Login = () => {
             const loggedUser= result.user;
             console.log(loggedUser)
             setSuccess('congratulation!! user successfully login')
+            setError('')
             event.target.reset ();
            navigate(from ,{replace: true})
 
@@ -39,6 +41,7 @@ const Login = () => {
 
           .catch( (error)=>{
              console.log(error.message)
+             setError(' sorry!! user name or password do not match')
              setSuccess('')
           })
        }
@@ -118,6 +121,7 @@ const Login = () => {
       </form>
        
       <p className='mt-2 mb-3 text-red-700' > {success} </p>
+      <p className='mt-2 mb-3 text-red-700' > {error} </p>
 
       {/* link register */}
       <Link to='/register' >
