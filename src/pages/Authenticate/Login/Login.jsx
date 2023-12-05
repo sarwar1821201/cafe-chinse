@@ -11,7 +11,7 @@ const Login = () => {
  // const [error, setError] =useState('')
    const [show, setShow] = useState(false);
    const [success, setSuccess] = useState('')
-    const {signIn, signInWithGoogle } =  useContext(AuthContext);
+    const {signIn, signInWithGoogle, signInWithGithub } =  useContext(AuthContext);
 
        const handleLogin= (event) => {
 
@@ -50,6 +50,22 @@ const Login = () => {
          .catch( (error) => {
           console.log('error' ,  error.message)
          } );
+      }
+
+      const handleGithubSignIn = () => {
+         console.log('github diye sign in koro')
+        signInWithGithub()
+        .then( (result)=> {
+          const user= result.user;
+          console.log(user)
+
+        } )
+
+        .catch( (error) =>{
+          console.log('error', error.message )
+        } )
+
+
       }
 
     return (
@@ -102,7 +118,7 @@ const Login = () => {
 
    {/* //sign in with FcGoogle */}
    <button onClick={handleGoogleSignIn} className="btn btn-link m-2 mb-2">  <FcGoogle></FcGoogle> Sign in With Google  </button>
-   <button className="btn btn-link m-2 mb-2">  <FaGithubSquare></FaGithubSquare> Sign in With Git-Hub </button>
+   <button onClick={handleGithubSignIn} className="btn btn-link m-2 mb-2">  <FaGithubSquare></FaGithubSquare> Sign in With Git-Hub </button>
 
 
     </div>
