@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FcGoogle } from "react-icons/fc";
 import { FaGithubSquare } from "react-icons/fa";
+import { AuthContext } from '../../../providers/AuthProvider';
 
 
 
 const Login = () => {
-
     
+  const [error, setError] =useState('')
+    const {signIn} =  useContext(AuthContext)
 
     return (
         <div>
