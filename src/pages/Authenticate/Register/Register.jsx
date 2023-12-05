@@ -5,6 +5,7 @@ import { AuthContext } from '../../../providers/AuthProvider';
 const Register = () => {
   const [error,setError] = useState('');
   const [success, setSuccess] = useState ('');
+  const [show, setShow] = useState(false);
 
    const {createUser} =useContext(AuthContext);
    
@@ -75,7 +76,7 @@ const Register = () => {
           <label className="label">
             <span className="label-text">Password</span>
           </label>
-          <input type="password" name='password' placeholder="password" className="input input-bordered" required />
+          <input type={show? 'text' : 'password'} name='password' placeholder="password" className="input input-bordered" required />
         </div>
 
         {/* <div className="form-control">
@@ -84,6 +85,14 @@ const Register = () => {
           </label>
           <input type="text" name='photo' placeholder="photo url" className="input input-bordered"  />
         </div> */}
+
+         <p className='mt-2' onClick={()=> setShow(!show) } > 
+         
+         {
+                 show ?  <h5>Hide Password</h5> : <h5>Show Password</h5>
+             }
+       </p>
+
 
         <div className="form-control mt-2">
           <button className="btn btn-primary">Register</button>
