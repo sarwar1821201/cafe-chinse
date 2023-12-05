@@ -61,9 +61,18 @@ return (
 
    {/* Mobile Navbar Section */}
    {
-      user ? <> <button onClick={handleLogout}  className="btn bg-yellow-700" >Logout</button> </> :  <Link to='/login' > <button className="btn bg-yellow-700" >Login</button> </Link>  
+      user ? (  <div className="flex gap-2 items-center ">
+      <img
+        className="h-12 w-12 lg:h-20 lg:w-20 rounded-full "
+        src={user.photoURL ? user.photoURL : ""}
+       
+      />
+       <button onClick={handleLogout}  className="btn bg-yellow-700" >Logout</button>
+      
+    </div> ) :  <Link to='/login' > <button className="btn bg-yellow-700" >Login</button> </Link>  
   }
       
+  
 
       <div className='lg:hidden'>
           {/* Dropdown Open Button */}

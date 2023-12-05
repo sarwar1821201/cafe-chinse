@@ -7,7 +7,7 @@ const Register = () => {
   const [success, setSuccess] = useState ('');
   const [show, setShow] = useState(false);
 
-   const {createUser} =useContext(AuthContext);
+   const {createUser, userProfileUpdate } =useContext(AuthContext);
    
       const handleSignUp =(event) =>{
 
@@ -15,6 +15,7 @@ const Register = () => {
        const name= event.target.name.value;
        const email= event.target.email.value;
        const password= event.target.password.value;
+       const photo= event.target.photo.value;
 
        console.log(name,email,password)
 
@@ -31,6 +32,7 @@ const Register = () => {
 
         const loggedUser= result.user;
         console.log(loggedUser);
+        userProfileUpdate(name,photo);
         setSuccess('congratulations!! Registration Successfully Completed')
         setError('')
         event.target.reset()
@@ -79,12 +81,12 @@ const Register = () => {
           <input type={show? 'text' : 'password'} name='password' placeholder="password" className="input input-bordered" required />
         </div>
 
-        {/* <div className="form-control">
+        <div className="form-control">
           <label className="label">
             <span className="label-text">Photo</span>
           </label>
           <input type="text" name='photo' placeholder="photo url" className="input input-bordered"  />
-        </div> */}
+        </div>
 
          <p className='mt-2' onClick={()=> setShow(!show) } > 
          
