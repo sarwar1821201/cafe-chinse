@@ -8,8 +8,33 @@ import { AuthContext } from '../../../providers/AuthProvider';
 
 const Login = () => {
     
-  const [error, setError] =useState('')
+ // const [error, setError] =useState('')
     const {signIn} =  useContext(AuthContext)
+
+       const handleLogin= (event) => {
+
+          event.preventDefault();
+          const email= event.target.email.value;
+          const password= event.target.password.value;
+
+          console.log(email,password)
+
+          signIn(email,password)
+          .then( (result) =>{
+            
+            const loggedUser= result.user;
+            console.log(loggedUser)
+            event.target.reset ();
+           // navigate(from ,{replace: true})
+
+          })
+
+          .catch( (error)=>{
+             console.log(error.message)
+          })
+       }
+
+       
 
     return (
         <div>
@@ -21,7 +46,7 @@ const Login = () => {
     </div>
 
     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-      <form className="card-body">
+      <form className="card-body" onSubmit={handleLogin}  >
 
         <div className="form-control">
           <label className="label">
