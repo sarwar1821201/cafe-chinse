@@ -7,13 +7,14 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+console.log ('environment variable', import.meta.env.VITE_apiKey )
 const firebaseConfig = {
-  apiKey: "AIzaSyBpMehIPSskvw3QQrrM30rGF26O99838mo",
-  authDomain: "cafe-chinese.firebaseapp.com",
-  projectId: "cafe-chinese",
-  storageBucket: "cafe-chinese.appspot.com",
-  messagingSenderId: "902776821672",
-  appId: "1:902776821672:web:e7acdf4adc226df09f6f9d"
+  apiKey: import.meta.env.VITE_apiKey  ,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId
 };
 
 // Initialize Firebase

@@ -64,7 +64,7 @@ return (
       user ? (  <div className="flex gap-2 items-center ">
       <img
         className="h-12 w-12 lg:h-20 lg:w-20 rounded-full "
-        src={user.photoURL ? user.photoURL : ""}
+        src={user.photoURL ? user.photoURL : "can not loaded"}
        
       />
        <button onClick={handleLogout}  className="btn bg-yellow-700" >Logout</button>
