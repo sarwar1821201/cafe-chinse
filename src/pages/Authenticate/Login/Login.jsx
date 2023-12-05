@@ -9,7 +9,8 @@ import { AuthContext } from '../../../providers/AuthProvider';
 const Login = () => {
     
  // const [error, setError] =useState('')
-    const {signIn} =  useContext(AuthContext)
+   const [show, setShow] = useState(false);
+    const {signIn} =  useContext(AuthContext);
 
        const handleLogin= (event) => {
 
@@ -34,7 +35,7 @@ const Login = () => {
           })
        }
 
-       
+
 
     return (
         <div>
@@ -59,11 +60,17 @@ const Login = () => {
           <label className="label">
             <span className="label-text">Password</span>
           </label>
-          <input type="password" name='password' placeholder="password" className="input input-bordered" required />
+          <input type={show? 'text' : 'password'} name='password' placeholder="password" className="input input-bordered" required />
           {/* <label className="label">
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
           </label> */}
-          <p className='mt-2' > Show Password </p>
+          <p className='mt-2' onClick={()=> setShow(!show) } > 
+         
+            {
+                    show ?  <h5>Hide Password</h5> : <h5>Show Password</h5>
+                }
+          </p>
+
         </div>
 
         <div className="form-control mt-2">
