@@ -10,7 +10,8 @@ const Login = () => {
     
  // const [error, setError] =useState('')
    const [show, setShow] = useState(false);
-    const {signIn} =  useContext(AuthContext);
+   const [success, setSuccess] = useState('')
+    const {signIn, signInWithGoogle } =  useContext(AuthContext);
 
        const handleLogin= (event) => {
 
@@ -19,12 +20,14 @@ const Login = () => {
           const password= event.target.password.value;
 
           console.log(email,password)
+           setSuccess('')
 
           signIn(email,password)
           .then( (result) =>{
             
             const loggedUser= result.user;
             console.log(loggedUser)
+            setSuccess('congratulation!! user successfully login')
             event.target.reset ();
            // navigate(from ,{replace: true})
 
@@ -32,6 +35,7 @@ const Login = () => {
 
           .catch( (error)=>{
              console.log(error.message)
+             setSuccess('')
           })
        }
 
@@ -77,6 +81,8 @@ const Login = () => {
           <button className="btn btn-primary">Login</button>
         </div>
       </form>
+       
+      <p className='mt-2 mb-3 text-red-700' > {success} </p>
 
       {/* link register */}
       <Link to='/register' >
