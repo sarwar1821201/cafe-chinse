@@ -22,7 +22,7 @@ const SingleRecipe = ({recipe}) => {
   <p>Ingredients: </p>
    
    {
-      ingredients.map( (ingredient, index ) => <li
+      ingredients?.map( (ingredient, index ) => <li
         key={index}
       >
           {ingredient}

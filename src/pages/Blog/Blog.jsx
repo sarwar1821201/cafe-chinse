@@ -14,6 +14,8 @@ const Blog = () => {
         targetRef.current.save();
     };
 
+    // https://stackoverflow.com/questions/67594179/export-react-page-to-pdf
+
     return (
 
         <div>

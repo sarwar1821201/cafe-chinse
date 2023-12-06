@@ -7,12 +7,12 @@ const ChefCard = () => {
      
      useEffect( ()=>{
       
-        fetch('https://cafe-chinse-server-ai39qaa3g-sarwars-projects.vercel.app/chefs')
+        fetch('https://encouraging-gorilla.cyclic.app/chefs')
         .then(res=> res.json() )
-        .then(data=> setChefData(data)  )
+        .then(data=> setChefData(data)  );
   
 
-     } , [] )
+     } , [] );
   
     return (
         <div className='bg-zinc-700 p-12' >

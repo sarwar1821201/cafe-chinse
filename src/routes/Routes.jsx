@@ -43,7 +43,7 @@ const router= createBrowserRouter([
     {
        path:'/chefInfo/:id',
        element: <PrivateRoute> <RecipeLayout></RecipeLayout>  </PrivateRoute> ,
-       loader: ({params}) => fetch(`https://cafe-chinse-server-ai39qaa3g-sarwars-projects.vercel.app/${params.id}`),
+       loader: ({params}) => fetch(`https://encouraging-gorilla.cyclic.app/chefInfo/${params.id}`),
        errorElement: <ErrorPage></ErrorPage>
        
     }
