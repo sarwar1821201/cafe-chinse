@@ -7,7 +7,7 @@ const ChefCard = () => {
      
      useEffect( ()=>{
       
-        fetch('http://localhost:5000/chefs')
+        fetch('https://cafe-chinse-server-ai39qaa3g-sarwars-projects.vercel.app/chefs')
         .then(res=> res.json() )
         .then(data=> setChefData(data)  )
   

@@ -43,7 +43,7 @@ const router= createBrowserRouter([
     {
        path:'/chefInfo/:id',
        element: <PrivateRoute> <RecipeLayout></RecipeLayout>  </PrivateRoute> ,
-       loader: ({params}) => fetch(`http://localhost:5000/chefInfo/${params.id}`),
+       loader: ({params}) => fetch(`https://cafe-chinse-server-ai39qaa3g-sarwars-projects.vercel.app/${params.id}`),
        errorElement: <ErrorPage></ErrorPage>
        
     }
