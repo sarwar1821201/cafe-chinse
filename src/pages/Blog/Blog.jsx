@@ -1,16 +1,26 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import useTitle from '../../hooks/useTitle';
+import { PDFExport } from '@progress/kendo-react-pdf';
 
 
 const Blog = () => {
 
-    useTitle('Blogs')
+  const targetRef= useRef();
 
+    useTitle('Blogs')
+     
+    const handleDownloadpdf = () => {
+        console.log('pdf download koro')
+        targetRef.current.save();
+    };
 
     return (
+
         <div>
-            
-            <div className="bg-slate-100 p-10 mb-6 rounded-lg mx-6 mt-6">
+
+          <PDFExport ref={targetRef}  > 
+
+          <div className="bg-slate-100 p-10 mb-6 rounded-lg mx-6 mt-6">
           <h5 className="text-gray-700 text-4xl font-bold mb-6">
           Tell us the differences between uncontrolled and controlled components?. 
           </h5>
@@ -76,6 +86,14 @@ Example: The value of an input field is set by the state, and changes are handle
           </p>
          
          </div>
+
+          </PDFExport>
+            
+
+
+         <div className="card-actions justify-center mb-2 ">
+    <button onClick={handleDownloadpdf} className="btn btn-primary">Download PDF</button>
+  </div>
 
 
         </div>
